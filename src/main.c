@@ -9,11 +9,17 @@
 
 // My libraries
 #include "libs/byteforge.h"
+#include "libs/bfinfo.h"
+
+/*
+    Available error numbers:
+        0
+*/
 
 int main(int argc, char *argv[]){
     if(argc == 1){
         // byteforge called alone
-        printf("Error 0: ByteForge called without options\n");
+        getAppInfo();
         return 0;
     }
 
@@ -65,17 +71,8 @@ int main(int argc, char *argv[]){
         outFile = fopen(outputFileName,"wb");
     }
     char number = 0;
-    for(int i = 0; i < bytesNumber; i++){
-        // Generate random MSB (bit 8)
-        number += rand() % 2 == 0 ? 0 : 128; // 128
-        number += rand() % 2 == 0 ? 0 : 64; // 64
-        number += rand() % 2 == 0 ? 0 : 32; // 32
-        number += rand() % 2 == 0 ? 0 : 16; // 16
-        number += rand() % 2 == 0 ? 0 : 8; // 8
-        number += rand() % 2 == 0 ? 0 : 4; // 4
-        number += rand() % 2 == 0 ? 0 : 2; // 2
-        // Generate random LSB (bit 1)
-        number += rand() % 2 == 0 ? 0 : 1; // 1
+    for(long long int i = 0; i < bytesNumber; i++){
+        number = rand() % 256;
         fwrite(&number,1,1,outFile);
     }
     fclose(outFile);

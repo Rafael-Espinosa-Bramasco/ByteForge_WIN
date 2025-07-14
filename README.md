@@ -15,11 +15,11 @@ and that's it, you can now add it to the PATH
 
 ## How to use
 
-Once you either download it or compile it by yourself and added it to the PATH, yo can call:
+Once you either download it or compile it by yourself and added it to the PATH, you can call:
 
     byteforge
 
-and if it return an error, it worked.
+and if it return the app version, it worked.
 
 Byte forge can recive just 2 arguments: The output file name and the number of bytes to generate.
 
@@ -31,7 +31,7 @@ If you write 2 or more file names (with or without file extentions) it will resu
 
     byteforge mydata 256 myotherdata.bin
 
-You can call the app with just the number of bytes (the output file name will be data.bin).
+You can call the app with just the number of bytes (the output file name will be bytes.bin).
 
     byteforge 1024
 
