@@ -21,20 +21,38 @@ Once you either download it or compile it by yourself and added it to the PATH, 
 
 and if it return the app version, it worked.
 
-Byte forge can recive just 2 arguments: The output file name and the number of bytes to generate.
+1. Byte forge can recive just 2 arguments: The output file name and the number of bytes to generate.
+2. Byte forge can recive 2 types of options: The filler option and the pattern option
 
-If you write 2 or more numbers it will result on an error.
+- If you write 2 or more numbers it will result on an error.
 
-    byteforge 256 hola.bin 1026 2356
+        byteforge 256 hola.bin 1026 2356
 
-If you write 2 or more file names (with or without file extentions) it will result on an error.
+- If you write 2 or more file names (with or without file extentions) it will result on an error.
 
-    byteforge mydata 256 myotherdata.bin
+        byteforge mydata 256 myotherdata.bin
 
-You can call the app with just the number of bytes (the output file name will be bytes.bin).
+- You can call the app with just the number of bytes (the output file name will be bytes.bin).
 
-    byteforge 1024
+        byteforge 1024
 
-You can't call the app with just the output file name, it will result on an error.
+- You can't call the app with just the output file name, it will result on an error.
 
-    byteforge data.bin
+        byteforge data.bin
+
+- You can declare one option type i call "filler option" (-0 or -1).
+
+        byteforge 5 data.bin -0         => All the bytes on file will be 00000000 (0x00)
+        byteforge data.bin 9 -1         => All the bytes on file will be 11111111 (0xFF)
+
+    These options can overwrite the last filler option, this means, if you declare:
+    
+        byteforge 7 -0 -1 -0 -1 -0
+    
+    is valid but only the last filler option will have effect. The default filler option is -r, so...
+
+        byteforge 5 -r
+
+    is equals to
+
+        byteforge 5
