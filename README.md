@@ -22,7 +22,7 @@ Once you either download it or compile it by yourself and added it to the PATH, 
 and if it return the app version, it worked.
 
 1. Byte forge can recive just 2 arguments: The output file name and the number of bytes to generate.
-2. Byte forge can recive 2 types of options: The filler option and the pattern option
+2. Byte forge can recive 1 type of option: The filler option
 
 - If you write 2 or more numbers it will result on an error.
 
