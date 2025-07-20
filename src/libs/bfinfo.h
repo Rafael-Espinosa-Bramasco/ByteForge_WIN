@@ -3,8 +3,8 @@
 #ifndef BFINFO_H
 #define BFINFO_H
 
-static char* version = "1.1.0";
-static char* verBuild = "16072025";
+static char* version = "1.1.1";
+static char* verBuild = "20072025";
 static char* verType = "Beta";
 
 static inline void getAppInfo(void){
