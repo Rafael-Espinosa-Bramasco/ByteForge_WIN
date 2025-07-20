@@ -76,6 +76,8 @@ int main(int argc, char *argv[]){
         }
     }
 
+    srand(NULL);
+
     // Check values
     if(bytesNumber == -1){
         printf("Byte Number Error: Number of bytes are NULL\n");
