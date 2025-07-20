@@ -7,6 +7,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 // My libraries
 #include "libs/byteforge.h"
@@ -76,7 +77,7 @@ int main(int argc, char *argv[]){
         }
     }
 
-    srand(NULL);
+    srand(time(NULL));
 
     // Check values
     if(bytesNumber == -1){
